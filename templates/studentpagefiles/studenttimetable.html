@@ -1,0 +1,7 @@
+{% extends "studentpagefiles/studentlayout.html" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='studentpagefiles/studenttimetable.css')}}">
+{% endblock style %}
+{% block content %}
+    <img id="logo", src="{{ url_for('static', filename='mainfiles/coming-soon-page.jpg')}}" style="width:100%; height:auto;">
+{% endblock content %}
