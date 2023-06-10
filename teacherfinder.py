@@ -7,10 +7,14 @@ import mysql.connector as mysql
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+if load_dotenv():
+    pass
+else:
+    load_dotenv("/var/www/.env")
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
+db = mysql.connect(host = os.getenv('HOST'), port = os.getenv('PORT'), user = os.getenv('USER'), password = os.getenv('PASSWORD'))
 db = mysql.connect(host = os.getenv('HOST'), port = os.getenv('PORT'), user = os.getenv('USER'), password = os.getenv('PASSWORD'))
 cursor = db.cursor()
 
