@@ -15,7 +15,10 @@ from adminhub_backend import adminpage as ap
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+if load_dotenv():
+    pass
+else:
+    load_dotenv("/var/www/.env")
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
