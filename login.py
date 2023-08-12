@@ -9,7 +9,10 @@ import teacherfinder, msw
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+if load_dotenv():
+    pass
+else:
+    load_dotenv("/var/www/.env")
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
@@ -17,16 +20,14 @@ app.secret_key = os.getenv('SECRET_KEY')
 db = mysql.connect(host = os.getenv('HOST'), port = os.getenv('PORT'), user = os.getenv('USER'), password = os.getenv('PASSWORD'))
 cursor = db.cursor()
 
-def login():
-    password = request.form.get("password")
-    username = request.form.get("username")
-    accesscode = request.form.get("accesscode")
+def login(username, password, accesscode):
     sql = "SELECT * FROM `dbmaster`.User WHERE accesscode = %s AND username = %s"
     u = (accesscode, username)
     cursor.execute(sql, u)
     myresult = cursor.fetchall()
     db.commit()
-    if bcrypt.check_password_hash(myresult[0][2].encode("utf-8"), password):
+
+    if bcrypt.check_password_hash(str(myresult[0][2]), str(password)):
         if myresult[0][3] == "1":
             session['logged_in'] = True
             session['lvl'] = 1

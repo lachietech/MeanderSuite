@@ -142,7 +142,10 @@ def duluxepackdesc():
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        return log.login()
+        password = str(request.form.get("password"))
+        username = str(request.form.get("username"))
+        accesscode = str(request.form.get("accesscode"))
+        return log.login(username, password, accesscode)
     if request.method == "GET":
         return render_template("mainfiles/login.html")
 

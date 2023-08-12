@@ -16,7 +16,7 @@ cursor = db.cursor()
 
 def TrafficLights():
     rank = 0
-    cursor.execute("SELECT * FROM `Meander-secure`.weather")
+    cursor.execute("SELECT * FROM `dbmaster`.weather")
     myresult = cursor.fetchall()
     db.commit()
     temp = float(myresult[0][1])
