@@ -105,6 +105,9 @@ def teacherprojects():
 @app.route('/studentprojects')
 def studentprojects():
     return render_template("mainfiles/studentprojects.html")
+@app.route('/documentation')
+def documentation():
+    return render_template("mainfiles/documentation.html")
 
 
 # ______________________________________________________________________________________________________________________________________________________________

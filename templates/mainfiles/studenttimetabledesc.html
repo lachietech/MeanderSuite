@@ -5,5 +5,35 @@
     </style>
 {% endblock style %}
 {% block content %}
-    <img id="logo", src="{{ url_for('static', filename='mainfiles/coming-soon-page.jpg')}}" style="width:100%; height:auto;">   
+<section class="py-5" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A Better Way To Manage, Organise, and excel.</h2></div>
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-5 h-100">
+                        <div class="text-black rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h5">Tailored And Researched Projects</h2>
+                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <div class="text-black rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h5">Ultimate Accessibility</h2>
+                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    </div>
+                    <div class="col mb-5 mb-md-0 h-100">
+                        <div class="text-black rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h5">Easy To Manage</h2>
+                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    </div>
+                    <div class="col h-100">
+                        <div class="text-black rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h5">Simple And Effective</h2>
+                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
