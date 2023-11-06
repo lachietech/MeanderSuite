@@ -8,7 +8,7 @@ import android.webkit.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val URL = "http://meandersuite.com/login"
+        private const val URL = "https://meandersuite.com/login"
     }
 
     private lateinit var webView: WebView
