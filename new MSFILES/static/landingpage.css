@@ -1,0 +1,23 @@
+/* Add your custom styles here */
+/* Customize as needed */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+#hero {
+    background-color: #3498db;
+    color: #fff;
+    padding: 100px 0;
+}
+
+#features, #how-it-works, #testimonials, #download {
+    padding: 80px 0;
+}
+
+.navbar {
+    padding: 20px 0;
+}
+
+footer {
+    padding: 20px 0;
+}
